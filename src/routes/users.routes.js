@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { createUser, getUserById, getUsers } from '../controllers/users.controller.js';
+import { createUser, getUserById, getUsers, deleteUser } from '../controllers/users.controller.js';
 const router = Router();
 
 // GET all users
@@ -17,8 +17,6 @@ router.patch('/users/:id', (req, res) => {
 });
 
 // DELETE user
-router.delete('/users/:id', (req, res) => {
-    res.send("Delete user endpoint - to be implemented");
-});
+router.delete('/users/:id', deleteUser);
 
 export default router;
